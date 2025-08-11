@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Savory Plateful</title>
+  <style>
+    h1{
+      text-align: center;
+      color: rgb(156, 0, 0);
+      font-family: playfair;
+      font-weight: 900;
+      background-color: #ffbc81 ;
+      border-radius: 10px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+
+    }
+    p{
+      color: black;
+      font-family: sans-serif;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 22px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-color: #FDFBD4 ;
+      overflow-x: hidden;
+    }
+
+    /* Sidebar styles */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background-color: #181818;
+      color: white (255, 255, 255);
+      transition: left 0.3s ease;
+      padding-top: 60px;
+    }
+
+    .sidebar.active {
+      left: 0;
+    }
+
+    .sidebar a {
+      display: block;
+      padding: 15px 20px;
+      color: rgb(0, 195, 255);
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #444;
+    }
+
+    .dropdown {
+      display: none;
+      background-color: #2e2d2d;
+    }
+
+    .dropdown a {
+      padding-left: 40px;
+    }
+
+    .dropdown-toggle::after {
+      content: ' ▼';
+      float: right;
+    }
+
+    .dropdown.show {
+      display: block;
+    }
+
+    /* Toggle button */
+    .toggle-btn {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      background: #1a1a1a;
+      color: white;
+      padding: 10px 15px;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+    }
+
+    /* Main content */
+    .content {
+      padding: 20px;
+      margin-left: 60px;
+    }
+    img{
+      border-radius: 100%;
+      display: block;
+      margin: 0 auto;
+      border: 5px solid;
+      border-color: #ffbc81;
+      margin-bottom: 40px;
+    }
+    .link{
+      text-align: center;
+    }
+    a{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #181818;
+      font-size:20px;
+    }
+    .rata{
+      background-color: bisque;
+      padding: 15px;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="toggle-btn" onclick="toggleSidebar()">☰ Menu</button>
+
+  <div class="sidebar" id="sidebar">
+    <a href="mainpage.html">Home</a>
+    <a href="#" class="dropdown-toggle" onclick="toggleDropdown()">Recipes</a>
+    <div class="dropdown" id="dropdown-menu">
+      <a href="#">Break-Fast Recipes</a>
+      <a href="#">Lunch Recipes</a>
+      <a href="#">Dinner Recipes</a>
+      <a href="#">Drink & Cocktail Recipes</a>
+    </div>
+    <a href="contacts.html">Contact</a>
+    <a href="About.html">About</a>
+  </div>
+
+  <div class="content">
+    <br><h1>Savory Plateful</h1><br><br>
+    <marquee behavior="alternate" direction="right" >motto<i>"<b>COOKING IS LOVE MADE EDIBLE</b>."</i></marquee>
+    <p class="intro">
+       Get cooking with our curated collection of recipes ,from comforting classics to innvative twists. 
+      Find inspiration ,tips and techniques to elevate your culinary skills. Ebark on adventure with us! Explore a Beautiful world
+      of flavors ,from savory to sweet and from my kitchen to yours ,We exited to share our passion for cooking and inspire you to create 
+      delicious meals.<br> And always remember that "cooking is love made edible."
+    </p>
+    <div class="rata">
+      <img src="ratatouille.jpg" alt="ratatouille" width="250px" height="250" >
+      <p>This traditional French Ratatouille recipe brings out the best in fresh, seasonal vegetables by searing and
+         <br>slow-cooking them with
+         aromatic herbs until perfectly tender. I love how each ingredient enhances the next,<br> and once
+          you take your first bite, I’m sure 
+         you’ll feel the same.</p>
+      <div class="link"><a href="ratatouille.html"><b>How To Prepare</b></a></div>
+    </div>
+  </div>
+
+  <script>
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("active");
+    }
+
+    function toggleDropdown() {
+      document.getElementById("dropdown-menu").classList.toggle("show");
+    }
+    
+  </script>
+
+</body>
+</html>
